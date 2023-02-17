@@ -1,23 +1,36 @@
 import logo from './logo.svg';
 import './App.css';
+import React, {useState} from 'react';
 
 function App() {
+  const [age, setAge] = useState(5);
+  const [name, setName] = useState('');
+
+  const onChangeName = () => {
+    setName(" dự ")
+  };
+  const onChangeAge = () => {
+  setAge(age+1);
+ };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        tuổi là : {age}
+      </div>
+      
+      <div>
+        tên là : {name}
+      </div>
+      <button onClick={onChangeAge}> 
+      Tăng tuổi thêm 1 
+      </button>
+ 
+      <button onClick={onChangeName}>
+      Hiển thị tên 
+
+      </button>
+      
     </div>
   );
 }
